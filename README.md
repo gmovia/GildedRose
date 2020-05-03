@@ -45,7 +45,7 @@ legendary item and as such its Quality is 80 and it never alters.
 ## Build and Run Tests
  - gradle build 
 
-
+This generates reports in the build/reports directory
 
 ### Reference Documentation
 For further reference, please consider the following sections:
