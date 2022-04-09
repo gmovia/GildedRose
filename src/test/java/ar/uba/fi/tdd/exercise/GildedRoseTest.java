@@ -33,6 +33,15 @@ class GildedRoseTest {
 		assertEquals(9, item.getSellIn());
 	}
 
+	@Test
+	public void test03unItemNormalConSellIn1yQuality10LuegoDeUnDiaPoseeQuality8(){
+		Item item = new Item("item", 1, 10);
+		GildedRose app = new GildedRose();
 
+		app.add(item);
+		app.updateQuality();
+
+		assertEquals(8, item.getQuality());
+	}
 
 }

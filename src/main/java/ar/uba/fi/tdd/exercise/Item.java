@@ -23,7 +23,12 @@ public class Item {
     }
 
     public void updateQuality(){
-        quality --;
         sellIn --;
+        if(sellIn < 1){
+            quality = quality - 2;
+        }
+        else{
+            quality = quality - 1;
+        }
     }
  }
