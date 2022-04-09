@@ -2,26 +2,28 @@ package ar.uba.fi.tdd.exercise;
 
 public class Item {
 
-    //name
-    public String Name;
-
-    // seell in
-    public int sellIn;
-
-    //
+    private String name;
+    private int sellIn;
     public int quality;
 
-    // constructor
-    public Item(String _name, int _sellIn, int _quality) {
-        this.Name = _name;
-        this.sellIn = _sellIn;
-        this.quality = _quality;
+    public Item(String name, int sellIn, int quality) {
+        this.name = name;
+        this.sellIn = sellIn;
+        this.quality = quality;
     }
 
-    // shows the Item representation
-   @Override
-   public String toString() {
+    // for test
+    public int getSellIn(){
+        return sellIn;
+    }
 
-     return this.Name + ", " + this.sellIn + ", " + this.quality;
+    // for test
+    public int getQuality(){
+        return quality;
+    }
+
+    public void updateQuality(){
+        quality --;
+        sellIn --;
     }
  }
