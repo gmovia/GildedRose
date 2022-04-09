@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GildedRoseTest {
 
 	@Test
-	public void test01UnItemNormalConSellIn10yQuality10luegoDeUnDiaTieneQuality9(){
-		Item item = new Item("item", 10, 10);
+	public void test01SeAgregaUnItemNormalConSellIn10yQuality10luegoDeUnDiaTieneQuality9(){
+		Item item = new Item("item", 10, 10, new Standard());
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -23,8 +23,8 @@ class GildedRoseTest {
 	}
 
 	@Test
-	public void test02unItemNormalConSellIn10yQuality10LuegoDeUnDiaTieneSellIn9(){
-		Item item = new Item("item", 10, 10);
+	public void test02SeAgregaunItemNormalConSellIn10yQuality10LuegoDeUnDiaTieneSellIn9(){
+		Item item = new Item("item", 10, 10, new Standard());
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -34,14 +34,25 @@ class GildedRoseTest {
 	}
 
 	@Test
-	public void test03unItemNormalConSellIn1yQuality10LuegoDeUnDiaPoseeQuality8(){
-		Item item = new Item("item", 1, 10);
+	public void test03SeAgregaUnItemNormalConSellIn1yQuality10LuegoDeUnDiaPoseeQuality8(){
+		Item item = new Item("item", 1, 10, new Standard());
 		GildedRose app = new GildedRose();
 
 		app.add(item);
 		app.updateQuality();
 
 		assertEquals(8, item.getQuality());
+	}
+
+	@Test
+	public void test04SeAgregaUnQuesoBrieConQuality15yLuegoDeUnDiaPoseeQuality16(){
+		Item item = new Item("Queso brie", 9, 15, new Brie());
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+		app.updateQuality();
+
+		assertEquals(16, item.getQuality());
 	}
 
 }

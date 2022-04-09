@@ -4,12 +4,15 @@ public class Item {
 
     private String name;
     private int sellIn;
-    public int quality;
+    private int quality;
+    private QualityStrategy strategy;
 
-    public Item(String name, int sellIn, int quality) {
+
+    public Item(String name, int sellIn, int quality, QualityStrategy strategy) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
+        this.strategy = strategy;
     }
 
     // for test
@@ -24,11 +27,8 @@ public class Item {
 
     public void updateQuality(){
         sellIn --;
-        if(sellIn < 1){
-            quality = quality - 2;
-        }
-        else{
-            quality = quality - 1;
-        }
+        quality = strategy.modifyQuality(quality, sellIn);
     }
+
+
  }
