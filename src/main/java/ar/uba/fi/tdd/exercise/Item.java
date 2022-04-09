@@ -1,5 +1,7 @@
 package ar.uba.fi.tdd.exercise;
 
+import ar.uba.fi.tdd.exercise.QualityStrategy.QualityStrategy;
+
 public class Item {
 
     private String name;

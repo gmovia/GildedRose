@@ -1,4 +1,4 @@
-package ar.uba.fi.tdd.exercise;
+package ar.uba.fi.tdd.exercise.QualityStrategy;
 
 public class Standard implements QualityStrategy {
 
