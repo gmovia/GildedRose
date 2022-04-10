@@ -26,7 +26,6 @@ public class Item {
         return quality;
     }
 
-
     public void updateQuality() {
         sellIn--;
         quality = strategy.modifyQuality(quality, sellIn);

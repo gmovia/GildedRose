@@ -55,5 +55,17 @@ public class Maker {
         );
     }
 
+    public Item buildItemConjured(String name, int sellIn, int quality){
+
+        QualityStrategy strategy = new Adder(-2, new MinimumRestriction(2));
+
+        return new Item(
+                name,
+                sellIn,
+                quality,
+                new inRange(-2, 0, new MinimumRestriction(2), strategy)
+        );
+    }
+
 
 }

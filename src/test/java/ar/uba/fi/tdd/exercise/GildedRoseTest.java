@@ -334,4 +334,59 @@ class GildedRoseTest {
 		assertEquals(50, item.getQuality());
 	}
 
+	@Test
+	public void test25seAgregaUnItemConjuradoConSellIn4yQuality20YLuegoDe2UpdatePoseeQuality16(){
+		Item item = maker.buildItemConjured("item",4, 20);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for (int day = 0; day < 2; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(16, item.getQuality());
+	}
+
+	@Test
+	public void test26seAgregaUnItemConjuradoConSellIn4yQuality20YLuegoDe3UpdatePoseeQuality14(){
+		Item item = maker.buildItemConjured("item",4, 20);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for (int day = 0; day < 3; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(14, item.getQuality());
+	}
+
+	@Test
+	public void test27seAgregaUnItemConjuradoConSellIn4yQuality20YLuegoDe6UpdatePoseeQuality2(){
+		Item item = maker.buildItemConjured("item",4, 20);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for (int day = 0; day < 6; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(2, item.getQuality());
+	}
+
+	@Test
+	public void test28seAgregaUnItemConjuradoConSellIn4yQuality20YLuegoDe9UpdatePoseeQuality0(){
+		Item item = maker.buildItemConjured("item",4, 20);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for (int day = 0; day < 8; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(0, item.getQuality());
+	}
 }
