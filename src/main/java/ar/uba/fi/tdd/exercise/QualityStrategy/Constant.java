@@ -1,5 +1,6 @@
 package ar.uba.fi.tdd.exercise.QualityStrategy;
 
+import ar.uba.fi.tdd.exercise.Restriction.NullRestriction;
 import ar.uba.fi.tdd.exercise.Restriction.Restriction;
 
 public class Constant implements QualityStrategy {
@@ -10,7 +11,7 @@ public class Constant implements QualityStrategy {
         this.constant = constant;
     }
 
-    public int modifyQuality(int quality, int sellIn, Restriction restriction){
+    public int modifyQuality(int quality, int sellIn){
         return constant;
     }
 }
