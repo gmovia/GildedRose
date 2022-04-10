@@ -2,6 +2,7 @@ package ar.uba.fi.tdd.exercise;
 
 import ar.uba.fi.tdd.exercise.QualityStrategy.Backstage;
 import ar.uba.fi.tdd.exercise.QualityStrategy.Brie;
+import ar.uba.fi.tdd.exercise.QualityStrategy.Maker;
 import ar.uba.fi.tdd.exercise.QualityStrategy.Standard;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,9 +13,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class GildedRoseTest {
 
+	Maker maker = new Maker();
+
 	@Test
 	public void test01SeAgregaUnItemNormalConSellIn10yQuality10luegoDeUnDiaTieneQuality9(){
-		Item item = new Item("item", 10, 10, new Standard());
+		Item item = maker.buildItemStandard("item", 10, 10);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -25,7 +28,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test02SeAgregaunItemNormalConSellIn10yQuality10LuegoDeUnUpdateTieneSellIn9(){
-		Item item = new Item("item", 10, 10, new Standard());
+		Item item = maker.buildItemStandard("item", 10, 10);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -36,7 +39,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test03SeAgregaUnItemNormalConSellIn1yQuality10LuegoDeUnUpdatePoseeQuality8(){
-		Item item = new Item("item", 1, 10, new Standard());
+		Item item = maker.buildItemStandard("item", 1, 10);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -47,7 +50,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test04SeAgregaUnQuesoBrieConQuality15yLuegoDeUnUpdatePoseeQuality16(){
-		Item item = new Item("Queso brie", 9, 15, new Brie());
+		Item item = maker.buildAgedBrie(9, 15);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -58,7 +61,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test05seAgregaUnQuesoBrieConSellIn12YLuegoDeUnUpdateDisminuyeEnUnaUnidad(){
-		Item item = new Item("Queso brie", 12, 15, new Brie());
+		Item item = maker.buildAgedBrie(12, 15);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -69,7 +72,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test06seAgregaBackstagePassesConSellIn16yQuality9yLuegoDeUnUpdatePoseeQuality10(){
-		Item item = new Item("Backstage passes", 16, 9, new Brie());
+		Item item = maker.buildBackstagePasses(16, 9);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -80,7 +83,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test07seAgregaBackstagePassesConSellIn9yQuality12yLuegoDeUnUpdatePoseeQuality14(){
-		Item item = new Item("Backstage passes", 9, 12, new Backstage());
+		Item item = maker.buildBackstagePasses(9, 12);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -91,7 +94,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test08seAgregaBackstagePassesConSellIn4yQuality21yLuegoDeUnUpdatePoseeQuality24(){
-		Item item = new Item("Backstage passes", 4, 21, new Backstage());
+		Item item = maker.buildBackstagePasses(4, 21);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
@@ -102,7 +105,7 @@ class GildedRoseTest {
 
 	@Test
 	public void test09seAgregaBackstagePassesConSellIn1yQuality35yLuegoDeUnUpdatePoseeQuality0(){
-		Item item = new Item("Backstage passes", 1, 35, new Backstage());
+		Item item = maker.buildBackstagePasses(1, 35);
 		GildedRose app = new GildedRose();
 
 		app.add(item);
