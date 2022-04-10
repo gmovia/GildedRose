@@ -1,5 +1,7 @@
 package ar.uba.fi.tdd.exercise.QualityStrategy;
 
+import ar.uba.fi.tdd.exercise.Restriction.Restriction;
+
 public class inRange implements QualityStrategy{
 
     int max;
@@ -13,10 +15,12 @@ public class inRange implements QualityStrategy{
     }
 
     @Override
-    public int modifyQuality(int quality, int sellIn) {
-        quality = quality + adder;
-        if(sellIn <= max){
-            return strategy.modifyQuality(quality, sellIn);
+    public int modifyQuality(int quality, int sellIn, Restriction restriction) {
+        if(restriction.check(quality)) {
+            quality = quality + adder;
+            if (sellIn <= max) {
+                return strategy.modifyQuality(quality, sellIn, restriction);
+            }
         }
         return quality;
     }
