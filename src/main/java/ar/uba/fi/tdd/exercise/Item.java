@@ -22,7 +22,7 @@ public class Item {
         return sellIn;
     }
 
-    // for_test
+    // for test
     public int getQuality(){
         return quality;
     }
