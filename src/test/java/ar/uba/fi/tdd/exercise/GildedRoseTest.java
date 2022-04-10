@@ -1,9 +1,6 @@
 package ar.uba.fi.tdd.exercise;
 
-import ar.uba.fi.tdd.exercise.QualityStrategy.Backstage;
-import ar.uba.fi.tdd.exercise.QualityStrategy.Brie;
-import ar.uba.fi.tdd.exercise.QualityStrategy.Maker;
-import ar.uba.fi.tdd.exercise.QualityStrategy.Standard;
+import ar.uba.fi.tdd.exercise.Maker.Maker;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -110,6 +107,117 @@ class GildedRoseTest {
 
 		app.add(item);
 		app.updateQuality();
+
+		assertEquals(0, item.getQuality());
+	}
+
+	@Test
+	public void test10seAgregaSulfureQualityyLuegoDeUnUpdatePoseeQualityConstante(){
+		Item item = maker.buildSulfure();
+		GildedRose app = new GildedRose();
+
+		int quality = item.getQuality();
+
+		app.add(item);
+		app.updateQuality();
+
+		assertEquals(quality, item.getQuality());
+	}
+
+	@Test
+	public void test11seAgregaUnItemNormalConSellIn4yQuality10yLuegoDe6UpdatePoseeQuality1(){
+		Item item = maker.buildItemStandard("item", 4, 10);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for(int day=0; day < 6; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(1, item.getQuality());
+	}
+
+	@Test
+	public void test12seAgregaUnQuesoBrieConSellIn3yQuality12yLuegoDe7UpdatePoseeQuality19(){
+		Item item = maker.buildAgedBrie(3, 12);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for(int day=0; day < 7; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(19, item.getQuality());
+	}
+
+	@Test
+	public void test13seAgregaBackstagePassesConSellIn12yQuality15yLuegoDe5UpdatePoseeQuality24(){
+		Item item = maker.buildBackstagePasses(12, 15);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for(int day=0; day < 5; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(24, item.getQuality());
+	}
+
+	@Test
+	public void test14seAgregaBackstagePassesConSellIn13yQuality21yLuegoDe9UpdatePoseeQuality39(){
+		Item item = maker.buildBackstagePasses(13, 21);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for(int day=0; day < 9; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(39, item.getQuality());
+	}
+
+	@Test
+	public void test14seAgregaBackstagePassesConSellIn12yQuality16yLuegoDe11UpdatePoseeQuality42(){
+		Item item = maker.buildBackstagePasses(12, 16);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for(int day=0; day < 11; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(42, item.getQuality());
+	}
+
+	@Test
+	public void test15seAgregaBackstagePassesConSellIn12yQuality16yLuegoDe12UpdatePoseeQuality0(){
+		Item item = maker.buildBackstagePasses(12, 16);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for(int day=0; day < 12; day++) {
+			app.updateQuality();
+		}
+
+		assertEquals(0, item.getQuality());
+	}
+
+	@Test
+	public void test16seAgregaBackstagePassesConSellIn12yQuality16yLuegoDe21UpdatePoseeQuality0(){
+		Item item = maker.buildBackstagePasses(12, 16);
+		GildedRose app = new GildedRose();
+
+		app.add(item);
+
+		for(int day=0; day < 21; day++) {
+			app.updateQuality();
+		}
 
 		assertEquals(0, item.getQuality());
 	}
