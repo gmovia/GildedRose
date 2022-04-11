@@ -1,23 +1,25 @@
 
 package ar.uba.fi.tdd.exercise;
 
+import ar.uba.fi.tdd.exercise.Item.ItemFactory;
+
 import java.util.ArrayList;
 
 class GildedRose {
 
-    ArrayList<Item> items;
+    ArrayList<ItemFactory> itemFactories;
 
     public GildedRose() {
-        this.items = new ArrayList<Item> ();
+        this.itemFactories = new ArrayList<ItemFactory> ();
     }
 
-    public void add(Item item){
-        items.add(item);
+    public void add(ItemFactory itemFactory){
+        itemFactories.add(itemFactory);
     }
 
     public void updateQuality() {
-        for(Item item: items){
-            item.updateQuality();
+        for(ItemFactory itemFactory : itemFactories){
+            itemFactory.updateQuality();
         }
     }
 }
