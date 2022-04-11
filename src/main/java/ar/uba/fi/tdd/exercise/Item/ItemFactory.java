@@ -12,6 +12,9 @@ public class ItemFactory {
         this.strategy = strategy;
     }
 
+    public Item getItem(){
+        return this.item;
+    }
     public void updateQuality() {
         this.item.sellIn --;
         this.item.quality = strategy.modifyQuality(this.item.quality, this.item.sellIn);
