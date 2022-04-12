@@ -8,7 +8,7 @@ import ar.uba.fi.tdd.exercise.Restriction.MinimumRestriction;
 import ar.uba.fi.tdd.exercise.Restriction.NullRestriction;
 import ar.uba.fi.tdd.exercise.Restriction.RangeRestriction;
 
-public class Maker { // TO-DO RESTRICTION CREATIONAL
+public class Maker {
 
     public ItemFactory buildItemStandard(Item item){
         QualityStrategy strategy = new Adder(-1, new MinimumRestriction(1));
@@ -57,6 +57,7 @@ public class Maker { // TO-DO RESTRICTION CREATIONAL
 
     public ItemFactory buildItemConjured(Item item){
         QualityStrategy strategy = new Adder(-2, new MinimumRestriction(2));
+
         return new ItemFactory(
                 item,
                 new inRange(-2, 0, new MinimumRestriction(2), strategy)

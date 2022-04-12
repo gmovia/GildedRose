@@ -1,9 +1,8 @@
-package ar.uba.fi.tdd.exercise.Translator;
+package ar.uba.fi.tdd.exercise.Interpret;
 
 import ar.uba.fi.tdd.exercise.Item.Item;
 import ar.uba.fi.tdd.exercise.Item.ItemFactory;
 import ar.uba.fi.tdd.exercise.Maker.Maker;
-import ar.uba.fi.tdd.exercise.QualityStrategy.Constant;
 
 public class Interpret {
     private static final String NAME_BRIE = "Aged Brie";

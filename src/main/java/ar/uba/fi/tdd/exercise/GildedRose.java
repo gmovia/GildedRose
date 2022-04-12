@@ -3,9 +3,7 @@ package ar.uba.fi.tdd.exercise;
 
 import ar.uba.fi.tdd.exercise.Item.Item;
 import ar.uba.fi.tdd.exercise.Item.ItemFactory;
-import ar.uba.fi.tdd.exercise.Translator.Interpret;
-
-import java.util.ArrayList;
+import ar.uba.fi.tdd.exercise.Interpret.Interpret;
 
 class GildedRose {
 
