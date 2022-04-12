@@ -7,8 +7,8 @@ import ar.uba.fi.tdd.exercise.Interpret.Interpret;
 
 class GildedRose {
 
-    Item[] items;
-    Interpret interpret = new Interpret();
+    private Item[] items;
+    private Interpret interpret = new Interpret();
 
     public GildedRose(Item[] items) {
         this.items = items;

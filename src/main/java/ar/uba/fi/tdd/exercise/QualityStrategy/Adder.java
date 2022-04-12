@@ -4,8 +4,8 @@ import ar.uba.fi.tdd.exercise.Restriction.Restriction;
 
 public class Adder implements QualityStrategy{
 
-    int adder;
-    Restriction restriction;
+    private int adder;
+    private Restriction restriction;
 
     public Adder(int adder, Restriction restriction){
         this.adder = adder;

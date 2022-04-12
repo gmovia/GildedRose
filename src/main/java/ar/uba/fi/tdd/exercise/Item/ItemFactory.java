@@ -5,7 +5,7 @@ import ar.uba.fi.tdd.exercise.QualityStrategy.QualityStrategy;
 public class ItemFactory {
 
     private QualityStrategy strategy;
-    Item item;
+    private Item item;
 
     public ItemFactory(Item item, QualityStrategy strategy) {
         this.item = item;

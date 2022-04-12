@@ -5,7 +5,7 @@ import ar.uba.fi.tdd.exercise.Restriction.Restriction;
 
 public class Constant implements QualityStrategy {
 
-    int constant;
+    private int constant;
 
     public Constant(int constant){
         this.constant = constant;

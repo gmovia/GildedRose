@@ -10,7 +10,7 @@ public class Interpret {
     private static final String NAME_BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
     private static final String NAME_CONJURED = "Conjured";
 
-    Maker maker;
+    private Maker maker;
 
     public Interpret(){
         this.maker = new Maker();
